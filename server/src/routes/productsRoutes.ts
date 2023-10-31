@@ -1,5 +1,7 @@
 import { Router } from 'express';
 
+import { productController } from '../controllers/productsController';
+
 class productsRoutes{
     public router: Router = Router();
 
@@ -8,7 +10,7 @@ class productsRoutes{
     }
 
     config(): void{
-        this.router.get('/', (req, res) => res.send('Productos.')); //En el link inicial de mi aplicacion, '/', se devuelve el mensaje 'Hello'
+        this.router.get('/', productController.products); //En el link inicial de mi aplicacion, '/', se devuelve el mensaje 'Hello'
     }
 }
 
