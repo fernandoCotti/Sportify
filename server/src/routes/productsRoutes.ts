@@ -10,7 +10,11 @@ class productsRoutes{
     }
 
     config(): void{
-        this.router.get('/', productsController.products); //En el link inicial de mi aplicacion, '/', se devuelve el mensaje 'Hello'
+        this.router.get('/', productsController.products); //Obtenemos los productos.
+        this.router.get('/:id', productsController.getProduct); //Obtenemos un producto particular.
+        this.router.post('/', productsController.createProduct); //Creamos los productos.
+        this.router.delete('/:id', productsController.deleteGame) //Eliminamos los productos.
+        this.router.put('/:id', productsController.updateGame) //Actualizamos los productos.
     }
 }
 

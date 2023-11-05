@@ -7,9 +7,11 @@ const mysql_1 = __importDefault(require("mysql"));
 const keys_1 = __importDefault(require("./keys"));
 const pool = mysql_1.default.createPool(keys_1.default.database);
 pool.getConnection((err, connection) => {
-    if (err)
-        throw err;
-    connection.release();
-    console.log('DB is connected');
+    if (err) {
+        console.error('Error de conexión a la base de datos:', err);
+    }
+    else {
+        console.log('DB is connected.');
+    }
 });
 exports.default = pool;

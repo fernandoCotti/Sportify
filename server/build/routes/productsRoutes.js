@@ -11,7 +11,11 @@ class productsRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', productsController_1.default.products); //En el link inicial de mi aplicacion, '/', se devuelve el mensaje 'Hello'
+        this.router.get('/', productsController_1.default.products); //Obtenemos los productos.
+        this.router.get('/:id', productsController_1.default.getProduct); //Obtenemos un producto particular.
+        this.router.post('/', productsController_1.default.createProduct); //Creamos los productos.
+        this.router.delete('/:id', productsController_1.default.deleteGame); //Eliminamos los productos.
+        this.router.put('/:id', productsController_1.default.updateGame); //Actualizamos los productos.
     }
 }
 const productRoutes = new productsRoutes();
