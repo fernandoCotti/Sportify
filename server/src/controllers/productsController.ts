@@ -27,8 +27,6 @@ class ProductsController {
         });
 
     }
-      
-      
 
     public async createProduct(req: Request, res:Response):Promise<void>{
         await db.query('INSERT INTO product set ?', [req.body]);
@@ -44,7 +42,6 @@ class ProductsController {
                 res.json({message: 'El producto fue eliminado.' });
             }
         });
-
     }
 
     public updateGame(req:Request, res:Response){
@@ -56,7 +53,6 @@ class ProductsController {
                 res.json({message: 'El producto fue actualizado' });
             }
         });
-
     }
 }
 const productsController = new ProductsController();
