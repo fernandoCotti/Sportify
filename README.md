@@ -1,4 +1,4 @@
-# Sportify
+## Sportify
 
 Este es un proyecto acerca de una página web donde se pueden añadir y catalogar productos relacionados a deportes
 
@@ -9,8 +9,8 @@ Este es un proyecto acerca de una página web donde se pueden añadir y cataloga
 - Postman
 - JavaScript, TypeScript
 
-# Pasos para levantar el proyecto
+## Pasos para levantar el proyecto
 
-npm run dev (nodemon)
-npm run build (tsc)
+npm run dev (nodemon) // Levantar el servidor\
+ng serve // Levantar la aplicación web
 
