@@ -26,7 +26,6 @@ export class ProductListComponent {
     this.productService.getProducts().subscribe(
       res => {
         this.products = res;
-        console.log('Producto creado');
       },
       err => console.error(err)
     );
@@ -42,5 +41,4 @@ export class ProductListComponent {
     );
   }
 
-  
 }

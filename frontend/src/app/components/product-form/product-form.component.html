@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <input type="url" name="image" [(ngModel)]="product.image" placeholder="Imagen" class="form-control">
                 </div>
-                <button class="btn btn-success btn-block" (click)="saveProduct()">
+                <button class="btn btn-success btn-block" (click)="edit ? updateProduct() : saveProduct()">
                     Guardar
                 </button>
             </form>
@@ -22,7 +22,7 @@
 <div class="col-md-4">
     <div class="card card-body text-center"> 
         <img [src]="product.image == ' ' ? '/assets/placeholder_image' : product.image" class="card-img-top">
-        <h3> {{product.id}} , {{product.productName == ' ' ? 'Nombre del producto' : product.productName}}</h3>
+        <h3> {{product.id}} . {{product.productName == ' ' ? 'Nombre del producto' : product.productName}}</h3>
         <p> {{product.description}}</p>
         <p> {{ product.created_at | date: 'dd-MM-yyyy' }}</p>
     </div>

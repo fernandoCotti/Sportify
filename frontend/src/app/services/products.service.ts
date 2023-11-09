@@ -30,7 +30,7 @@ export class ProductsService {
     return this.http.delete(`${this.API_URI}/allProducts/${id}`);
   }
 
-  updatePrduct(id:string, updatedProduct:Product){
+  updatePrduct(id:string|number, updatedProduct:Product): Observable<any>{
     return this.http.put(`${this.API_URI}/allProducts/${id}`, updatedProduct);
   }
 }

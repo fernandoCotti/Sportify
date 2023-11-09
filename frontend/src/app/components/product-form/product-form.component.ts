@@ -29,11 +29,15 @@ export class ProductFormComponent {
       this.productService.getProduct(params['id']).subscribe(
         res => {
           this.product = res;
+          this.edit = true;
         },
         err => console.error(err)
       );
     }
   }
+
+  edit: boolean= false;
+
 
   saveProduct(){
     delete this.product.created_at;
@@ -46,4 +50,16 @@ export class ProductFormComponent {
       err => console.error(err)
     );
   }
+
+  updateProduct(){
+    delete this.product.created_at;
+    this.productService.updatePrduct(this.product.id, this.product).subscribe(
+      res => {
+        console.log(res);
+        this.router.navigate(['./products']);
+      },
+      err => console.error(err)
+    );
+  }
+
 }
